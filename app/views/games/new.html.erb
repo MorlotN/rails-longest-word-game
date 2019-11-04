@@ -1,0 +1,15 @@
+<h1>New Game</h1>
+ <h3 width ="10px", height="10px", background-color= blue, color= white > <% @lettres.each do |lettre| %>
+  <%= lettre %>
+<%end %></h3>
+<p><%= @start_time %></p>
+
+<p>"What is the longest word you can find?"</p>
+<form action="/games/score" method="post">
+   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @lettres %>
+  <input type="hidden" name="start_time" value=<%= @start_time %>>
+  <input type="What is the longest word you can find?" name="result">
+  <input type="submit" value="Play">
+</form>
+
